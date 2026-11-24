@@ -12,21 +12,29 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <header>
-      <h1>Min portfolio</h1>
-      <p class="intro">Hej! Här presenterar jag mig och mina projekt.</p>
-      <nav aria-label="Huvudnavigering">
-        <ul>
-          <li><a href="#om-mig">Om mig</a></li>
-          <li><a href="#projekt">Projekt</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
+    <header class="header">
+      <h1 class="header__title">Min portfolio</h1>
+      <p class="header__intro">
+        Hej! Här presenterar jag mig och mina projekt.
+      </p>
+      <nav class="nav" aria-label="Huvudnavigering">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link nav__link--ommig" href="#om-mig">Om mig</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__link--projekt" href="#projekt">Projekt</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__link--kontakt" href="#kontakt">Kontakt</a>
+          </li>
         </ul>
       </nav>
     </header>
 
     <main>
       <section id="om-mig">
-        <h2>Om mig</h2>
+        <h2 class="main__h2">Om mig</h2>
         <ul>
           <li>
             Jag (Mr.B), lär mig att skapa webbsidor med HTML och CSS. Här kan
