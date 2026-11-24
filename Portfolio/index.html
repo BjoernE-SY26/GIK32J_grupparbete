@@ -72,9 +72,30 @@
         <h2>Kontakt</h2>
         <form action=""></form>
         <p>
-          Här kan jag senare lägga till kontaktuppgifter eller länkar. Jag
-          behöver inte använda privata uppgifter i laborationen.
+          För att få mer information om mig och mina tidigare arbeten, vänligen
+          fyll i nedanstående så återkommer jag inom kort.
         </p>
+        <form class="contact-form" action="/skicka" method="post">
+          <label class="contact-form__label" for="contact-name">Namn</label>
+          <input
+            class="contact-form__input"
+            type="text"
+            id="contact-name"
+            name="name"
+            autocomplete="name"
+          />
+          <label class="contact-form__label" for="contact-email"
+            >E-postadress</label
+          >
+          <input
+            class="contact-form__input"
+            type="email"
+            id="contact-email"
+            name="email"
+            autocomplete="email"
+          />
+          <button class="contact-form__submit" type="submit">Skicka</button>
+        </form>
       </section>
     </main>
 
