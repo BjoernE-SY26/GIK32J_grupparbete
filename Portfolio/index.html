@@ -51,10 +51,25 @@
             sidan då!
           </li>
         </ul>
+        <button
+          class="favoritglass__button"
+          type="button"
+          data-js-action="visa-favoritglass"
+          data-favoritglass="Pistageglass"
+        >
+          Avslöja min favoritglass
+        </button>
+
+        <!-- TARGET -->
+        <p
+          class="favoritglass__answer"
+          data-js-target="favoritglass-answer"
+        ></p>
       </section>
 
-      <section class="contact">
-        <h2 class="contact__title">Kontakt</h2>
+      <section id="contact">
+        <h2 class="section-contact__h2">Kontakt</h2>
+
         <p class="contact__text">
           För att få mer information om mig och mina tidigare arbeten, vänligen
           fyll i nedanstående så återkommer jag inom kort.
@@ -95,7 +110,7 @@
             />
           </fieldset>
 
-          <fieldset class="contact-checkbox__fieldset">
+          <fieldset>
             <legend class="contact-checkbox__legend">
               Välj inom vilket/vilka kodspråk du vill få fler projekt-exempel
               från:
