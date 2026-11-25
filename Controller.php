@@ -2,7 +2,8 @@
 
 $name = $_POST["name"] ?? "";
 $email = $_POST["email"] ?? "";
-$subject = $_POST["subject"] ?? "";
+$telefon= $_POST ["telefon"] ??"";
+$lunguages = $_POST["languges"] ?? "";
 $contactMethod = $_POST["contact-method"] ?? "";
 $message = $_POST["message"] ?? "";
 

@@ -60,13 +60,14 @@
           För att få mer information om mig och mina tidigare arbeten, vänligen
           fyll i nedanstående så återkommer jag inom kort.
         </p>
-        <form class="contact-form" action="/tack.php" method="post">
+        <form class="contact-form" action="controller.php" method="post">
           <fieldset>
             <legend>Fyll i nedanstående</legend>
-
-            <fieldset>
-              <label class="contact-form__label" for="contact-name"
-                >Namn:</label
+            
+          
+              <label class="contact-form__label" for="contact-name">
+                Namm:
+                </label
               >
               <input
                 class="contact-form__input"
@@ -75,6 +76,11 @@
                 name="name"
                 autocomplete="name"
               />
+
+              <label class=" contact-form_label" for="contact-telefon">Telefon:</label>
+
+            <input class="contact-form_input" type="tel" id="contact-telefon" name="telefon"
+            autocomplete="tel">
 
               <label class="contact-form__label" for="contact-email"
                 >E-postadress:</label
@@ -93,48 +99,31 @@
                 Välj inom vilket/vilka kodspråk du vill få fler projekt-exempel
                 från:
               </legend>
-              <label class="contact-form__label" for="contact-checkbox"
-                >java-script
+              <Input type="checkbox" id="language-js" name="languages[]" value="Javascript">
+                <label for="languages-js">Javascript</label>
+             
               </label>
-              <input
-                class="contact-form__checkbox"
-                type="checkbox"
-                id="contact-checkbox__js"
-                name="checkbox"
-              />
-              <label class="contact-form__label" for="contact-checkbox">
-                Python
-              </label>
-              <input
-                class="contact-form__checkbox"
-                type="checkbox"
-                id="contact-checkbox__py"
-                name="checkbox"
-              />
+              <input type="checkbox" id="language-python" name="lunguages[]" value="Python">
+              <label for="lanugages-python">Python</label>
+          
+              <Input type="checkbox" id="language-php" name="languages[]" value="PHP">
+                <label for="languages-js">PHP</label>
               <label class="contact-form__label" for="contact-checkbox"
                 >php
               </label>
-              <input
-                class="contact-form__checkbox"
-                type="checkbox"
-                id="contact-checkbox__php"
-                name="checkbox"
-              />
+              
             </fieldset>
+            
+          </fieldset>
 
-            <fieldset>
-              <legend>Beskriv vad du mer skulle vilja veta:</legend>
-              <label class="contact-form__label" for="contact-info"> </label>
-              <textarea
-                name="Kundinformation"
-                rows="5"
-                cols="50"
-                class="contact-form__input"
-                id="contact-info"
-                name="info"
-              >
-              </textarea>
-            </fieldset>
+          <fieldset>
+            <legend> Hur vill bli kontaktad?</legend>
+
+            <input type="radio" id="contact-email" name="contact-method" value="E-post" >
+            <label for="contact-email">E-post</E-post></label>
+
+            <input type="radio" id="contact-phone" name="contact-method" value="Telefon" >
+            <label for="contact-phone">telefon</E-post></label>
           </fieldset>
           <button class="contact-form__submit" type="submit">Skicka</button>
         </form>
