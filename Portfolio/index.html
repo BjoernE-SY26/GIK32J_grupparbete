@@ -20,34 +20,32 @@
       <nav class="nav" aria-label="Huvudnavigering">
         <ul class="nav__list">
           <li class="nav__item">
-            <a class="nav__link nav__link--ommig" href="#om-mig">Om mig</a>
+            <a class="nav__link" href="#om-mig">Om mig</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link nav__link--projekt" href="projekt.html"
-              >Projekt</a
-            >
+            <a class="nav__link" href="projekt.html">Projekt</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link nav__link--kontakt" href="#kontakt">Kontakt</a>
+            <a class="nav__link" href="#kontakt">Kontakt</a>
           </li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <section id="om-mig">
-        <h2 class="main__h2">Om mig</h2>
-        <ul>
-          <li>
+      <section id="about-me">
+        <h2 class="section-about-me__h2">Om mig</h2>
+        <ul class="section-about-me__list">
+          <li class="section-about-me__text">
             Jag (Mr.B), lär mig att skapa webbsidor med HTML och CSS. Här kan
             jag berätta lite om mig själv eller använda en påhittad
             presentation.
           </li>
-          <li>
+          <li class="section-about-me__text">
             Mr.B går för närvarande första året på systemvetenskapliga
             programmet hos Högskolan Dalarna i Borlänge.
           </li>
-          <li>
+          <li class="section-about-me__text">
             Mr.B Har för tillfället inget mer att tillägga i ärendet, återkom
             gärna efter en viss tid så ska du se att det finns mer material på
             sidan då!
@@ -55,16 +53,16 @@
         </ul>
       </section>
 
-      <section id="kontakt">
-        <h2>Kontakt</h2>
+      <section id="contact">
+        <h2 class="section-contact__h2">Kontakt</h2>
         <form action=""></form>
-        <p>
+        <p class="contact__text">
           För att få mer information om mig och mina tidigare arbeten, vänligen
           fyll i nedanstående så återkommer jag inom kort.
         </p>
         <form class="contact-form" action="/tack.php" method="post">
           <fieldset>
-            <legend>Fyll i nedanstående</legend>
+            <legend class="contact-form__legend">Fyll i nedanstående</legend>
 
             <fieldset>
               <label class="contact-form__label" for="contact-name"
@@ -91,7 +89,7 @@
             </fieldset>
 
             <fieldset>
-              <legend>
+              <legend class="contact-checkbox__legend">
                 Välj inom vilket/vilka kodspråk du vill få fler projekt-exempel
                 från:
               </legend>
@@ -125,7 +123,9 @@
             </fieldset>
 
             <fieldset>
-              <legend>Beskriv vad du mer skulle vilja veta:</legend>
+              <legend class="contact-info__legend">
+                Beskriv vad du mer skulle vilja veta:
+              </legend>
               <label class="contact-form__label" for="contact-info"> </label>
               <textarea
                 name="Kundinformation"
@@ -144,7 +144,7 @@
     </main>
 
     <footer class="footer">
-      <p id="footer">Min portfolio – en övning i HTML och CSS.</p>
+      <p class="footer__outro">Min portfolio – en övning i HTML och CSS.</p>
     </footer>
   </body>
 </html>
