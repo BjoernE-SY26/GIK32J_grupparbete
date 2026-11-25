@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio – Mr. B</title>
+    <meta
+      name="description"
+      content="Här finner du den samlade portfolion av arbeten som skrivits av Mr.B. under hans studietid i Borlänge."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">Min portfolio</h1>
+      <p class="header__intro">
+        Hej! Här presenterar jag mig och mina projekt.
+      </p>
+      <nav class="nav" aria-label="Huvudnavigering">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="#om-mig">Om mig</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="projekt.html">Projekt</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#kontakt">Kontakt</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="about-me">
+        <h2 class="section-about-me__h2">Om mig</h2>
+        <ul class="section-about-me__list">
+          <li class="section-about-me__text">
+            Jag (Mr.B), lär mig att skapa webbsidor med HTML och CSS. Här kan
+            jag berätta lite om mig själv eller använda en påhittad
+            presentation.
+          </li>
+          <li class="section-about-me__text">
+            Mr.B går för närvarande första året på systemvetenskapliga
+            programmet hos Högskolan Dalarna i Borlänge.
+          </li>
+          <li class="section-about-me__text">
+            Mr.B har för tillfället inget mer att tillägga i ärendet, återkom
+            gärna efter en viss tid så ska du se att det finns mer material på
+            sidan då!
+          </li>
+        </ul>
+      </section>
+
+      <section id="contact">
+        <h2 class="section-contact__h2">Kontakt</h2>
+        
+        <p class="contact__text">
+          För att få mer information om mig och mina tidigare arbeten, vänligen
+          fyll i nedanstående så återkommer jag inom kort.
+        </p>
+        <form class="contact-form" action="controller.php" method="post">
+          <fieldset>
+            <legend class="contact-form__legend">Fyll i nedanstående</legend>
+
+            
+              <label class="contact-form__label" for="contact-name"
+                >Namn:</label
+              >
+              <input
+                class="contact-form__input" type="text"
+                id="contact-name"  name="name" autocomplete="name"
+              />
+
+              <label class=" contact-form__label" for="contact-telefon">Telefon:</label>
+               <input class="contact-form__input" type="tel"
+             id="contact-telefon" name="telefon" autocomplete="tel">
+
+              <label class="contact-form__label" for="contact-email"
+                >E-postadress:</label
+              >
+              <input
+                class="contact-form__input" type="email"
+                id="contact-email" name="email" autocomplete="email"
+              />
+            </fieldset>
+
+            <fieldset>
+              <legend class="contact-checkbox__legend">
+                Välj inom vilket/vilka kodspråk du vill få fler projekt-exempel
+                från:
+              </legend>
+              <input type="checkbox" id="language-js" name="languages[]" value="JavaScript">
+                <label for="language-js">JavaScript</label>
+             
+              <input type="checkbox" id="language-python" name="languages[]" value="Python">
+              <label for="language-python">Python</label>
+          
+              <input type="checkbox" id="language-php" name="languages[]" value="PHP">
+                <label for="language-php">PHP</label>
+          
+              
+            </fieldset>
+            
+            <fieldset>
+              <legend> Vilken information är du intresserad av?</legend>
+              
+              <label for="contact-subject"> Välj ett område</label>
+
+              <select id="contact-subject" name="subject">
+                <option value="Välj ett område">Välj ett område</option>
+                <option value="Syntax">Syntax</option>
+                <option value="Loopar">Loopar</option>
+                <option value="Debugging">Debugging</option>
+              </select>
+            
+
+            </fieldset>
+            <fieldset>
+              <legend class="contact-info__legend">
+                Beskriv vad du mer skulle vilja veta:
+              </legend>
+              <label class="contact-form__label" for="contact-info"> Ditt meddelande </label>
+              <textarea
+                rows="5"
+                cols="50"
+                class="contact-form__input"
+                id="contact-info"
+                name="info"
+              ></textarea>
+            </fieldset>
+          <fieldset>
+            <legend> Hur vill du bli kontaktad?</legend>
+
+            <input type="radio" id="contact-method-email" name="contact-method" value="E-post" >
+            <label for="contact-method-email">E-post</label>
+
+            <input type="radio" id="contact-method-phone" name="contact-method" value="Telefon" >
+            <label for="contact-method-phone">telefon</label>
+          </fieldset>
+          <button class="contact-form__submit" type="submit">Skicka</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__outro">Min portfolio – en övning i HTML och CSS.</p>
+    </footer>
+  </body>
+</html>
+
