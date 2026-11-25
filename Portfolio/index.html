@@ -75,7 +75,7 @@
           fyll i nedanstående så återkommer jag inom kort.
         </p>
         <form class="contact-form" action="controller.php" method="post">
-          <fieldset>
+          <fieldset class="contact-form__fieldset">
             <legend class="contact-form__legend">Fyll i nedanstående</legend>
 
             <label class="contact-form__label" for="contact-name">Namn:</label>
@@ -110,8 +110,8 @@
             />
           </fieldset>
 
-          <fieldset>
-            <legend class="contact-checkbox__legend">
+          <fieldset class="contact-form__fieldset">
+            <legend class="contact-info__legend">
               Välj inom vilket/vilka kodspråk du vill få fler projekt-exempel
               från:
             </legend>
@@ -147,8 +147,10 @@
             />
           </fieldset>
 
-          <fieldset>
-            <legend>Vilken information är du intresserad av?</legend>
+          <fieldset class="contact-form__fieldset">
+            <legend class="contact-info__legend">
+              Vilken information är du intresserad av?
+            </legend>
 
             <label for="contact-subject"> Välj ett område</label>
 
@@ -159,7 +161,7 @@
               <option value="Debugging">Debugging</option>
             </select>
           </fieldset>
-          <fieldset>
+          <fieldset class="contact-form_fieldset">
             <legend class="contact-info__legend">
               Beskriv vad du mer skulle vilja veta:
             </legend>
@@ -172,8 +174,10 @@
               name="info"
             ></textarea>
           </fieldset>
-          <fieldset>
-            <legend>Hur vill du bli kontaktad?</legend>
+          <fieldset class="contact-form_fieldset">
+            <legend class="contact-info__legend">
+              Hur vill du bli kontaktad?
+            </legend>
 
             <input
               type="radio"
