@@ -46,7 +46,7 @@
             programmet hos Högskolan Dalarna i Borlänge.
           </li>
           <li class="section-about-me__text">
-            Mr.B Har för tillfället inget mer att tillägga i ärendet, återkom
+            Mr.B har för tillfället inget mer att tillägga i ärendet, återkom
             gärna efter en viss tid så ska du se att det finns mer material på
             sidan då!
           </li>
@@ -91,19 +91,32 @@
                 Välj inom vilket/vilka kodspråk du vill få fler projekt-exempel
                 från:
               </legend>
-              <Input type="checkbox" id="language-js" name="languages[]" value="Javascript">
-                <label for="language-js">Javascript</label>
+              <input type="checkbox" id="language-js" name="languages[]" value="JavaScript">
+                <label for="language-js">JavaScript</label>
              
               <input type="checkbox" id="language-python" name="languages[]" value="Python">
               <label for="language-python">Python</label>
           
-              <Input type="checkbox" id="language-php" name="languages[]" value="PHP">
+              <input type="checkbox" id="language-php" name="languages[]" value="PHP">
                 <label for="language-php">PHP</label>
-            
-              </label>
+          
               
             </fieldset>
+            
+            <fieldset>
+              <legend> Vilken information är du intresserad av?</legend>
+              
+              <label for="contact-subject"> Välj ett område</label>
 
+              <select id="contact-subject" name="subject">
+                <option value="Välj ett område">Välj ett område</option>
+                <option value="Syntax">Syntax</option>
+                <option value="Loopar">Loopar</option>
+                <option value="Debugging">Debugging</option>
+              </select>
+            
+
+            </fieldset>
             <fieldset>
               <legend class="contact-info__legend">
                 Beskriv vad du mer skulle vilja veta:
@@ -115,17 +128,16 @@
                 class="contact-form__input"
                 id="contact-info"
                 name="info"
-              >
-              </textarea>
+              ></textarea>
             </fieldset>
           <fieldset>
-            <legend> Hur vill bli kontaktad?</legend>
+            <legend> Hur vill du bli kontaktad?</legend>
 
             <input type="radio" id="contact-method-email" name="contact-method" value="E-post" >
-            <label for="contact-email">E-post</label>
+            <label for="contact-method-email">E-post</label>
 
             <input type="radio" id="contact-method-phone" name="contact-method" value="Telefon" >
-            <label for="contact-phone">telefon</label>
+            <label for="contact-method-phone">telefon</label>
           </fieldset>
           <button class="contact-form__submit" type="submit">Skicka</button>
         </form>
