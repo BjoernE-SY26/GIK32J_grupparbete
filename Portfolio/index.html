@@ -55,7 +55,6 @@
 
       <section id="kontakt">
         <h2 class="section-kontakt__h2">Kontakt</h2>
-        <form action=""></form>
         <p class="kontakt__text">
           För att få mer information om mig och mina tidigare arbeten, vänligen
           fyll i nedanstående så återkommer jag inom kort.
@@ -70,27 +69,20 @@
                 </label
               >
               <input
-                class="contact-form__input"
-                type="text"
-                id="contact-name"
-                name="name"
-                autocomplete="name"
+                class="contact-form__input" type="text"
+                id="contact-name"  name="name" autocomplete="name"
               />
 
-              <label class=" contact-form_label" for="contact-telefon">Telefon:</label>
-
-            <input class="contact-form_input" type="tel" id="contact-telefon" name="telefon"
-            autocomplete="tel">
+              <label class=" contact-form__label" for="contact-telefon">Telefon:</label>
+               <input class="contact-form__input" type="tel"
+             id="contact-telefon" name="telefon" autocomplete="tel">
 
               <label class="contact-form__label" for="contact-email"
                 >E-postadress:</label
               >
               <input
-                class="contact-form__input"
-                type="email"
-                id="contact-email"
-                name="email"
-                autocomplete="email"
+                class="contact-form__input" type="email"
+                id="contact-email" name="email" autocomplete="email"
               />
             </fieldset>
 
@@ -100,30 +92,26 @@
                 från:
               </legend>
               <Input type="checkbox" id="language-js" name="languages[]" value="Javascript">
-                <label for="languages-js">Javascript</label>
+                <label for="language-js">Javascript</label>
              
-              </label>
-              <input type="checkbox" id="language-python" name="lunguages[]" value="Python">
-              <label for="lanugages-python">Python</label>
+              <input type="checkbox" id="language-python" name="languages[]" value="Python">
+              <label for="language-python">Python</label>
           
               <Input type="checkbox" id="language-php" name="languages[]" value="PHP">
-                <label for="languages-js">PHP</label>
-              <label class="contact-form__label" for="contact-checkbox"
-                >php
+                <label for="language-php">PHP</label>
+            
               </label>
               
             </fieldset>
-            
-          </fieldset>
 
           <fieldset>
             <legend> Hur vill bli kontaktad?</legend>
 
-            <input type="radio" id="contact-email" name="contact-method" value="E-post" >
-            <label for="contact-email">E-post</E-post></label>
+            <input type="radio" id="contact-method-email" name="contact-method" value="E-post" >
+            <label for="contact-email">E-post</label>
 
-            <input type="radio" id="contact-phone" name="contact-method" value="Telefon" >
-            <label for="contact-phone">telefon</E-post></label>
+            <input type="radio" id="contact-method-phone" name="contact-method" value="Telefon" >
+            <label for="contact-phone">telefon</label>
           </fieldset>
           <button class="contact-form__submit" type="submit">Skicka</button>
         </form>
