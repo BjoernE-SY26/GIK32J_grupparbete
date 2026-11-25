@@ -20,13 +20,13 @@
       <nav class="nav" aria-label="Huvudnavigering">
         <ul class="nav__list">
           <li class="nav__item">
-            <a class="nav__link nav__link--ommig" href="#om-mig">Om mig</a>
+            <a class="nav__link" href="#om-mig">Om mig</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link nav__link--projekt" href="#projekt">Projekt</a>
+            <a class="nav__link" href="projekt.html">Projekt</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link nav__link--kontakt" href="#kontakt">Kontakt</a>
+            <a class="nav__link" href="#kontakt">Kontakt</a>
           </li>
         </ul>
       </nav>
@@ -34,8 +34,8 @@
 
     <main>
       <section id="om-mig">
-        <h2 class="om-mig__title">Om mig</h2>
-        <ul>
+        <h2 class="section-om-mig__h2">Om mig</h2>
+        <ul class="section-om-mig__list">
           <li>
             Jag (Mr.B), lär mig att skapa webbsidor med HTML och CSS. Här kan
             jag berätta lite om mig själv eller använda en påhittad
@@ -53,55 +53,89 @@
         </ul>
       </section>
 
-      <section id="projekt">
-        <h2 class="projekt__title">Mina projekt</h2>
-        <p>Här är några exempelprojekt. Jag kan byta ut dem senare.</p>
-
-        <article class="projektkort">
-          <h3>Projekt 1 – Min första webbsida</h3>
-          <p>En enkel webbsida byggd med HTML.</p>
-          <a href="#kontakt">Fråga mig om projektet</a>
-        </article>
-
-        <article class="projektkort">
-          <h3>Projekt 2 – En idé till en webbplats</h3>
-          <p>Ett exempel på något jag skulle vilja skapa.</p>
-          <a href="#kontakt">Fråga mig om projektet</a>
-        </article>
-
-        <article class="projektkort">
-          <h3>Projekt 2 – En idé till en webbplats</h3>
-          <p>Ett exempel på något jag skulle vilja skapa.</p>
-          <a href="#kontakt">Fråga mig om projektet</a>
-        </article>
-      </section>
-
       <section id="kontakt">
-        <h2>Kontakt</h2>
+        <h2 class="section-kontakt__h2">Kontakt</h2>
         <form action=""></form>
-        <p>
+        <p class="kontakt__text">
           För att få mer information om mig och mina tidigare arbeten, vänligen
           fyll i nedanstående så återkommer jag inom kort.
         </p>
-        <form class="contact-form" action="/skicka" method="post">
-          <label class="contact-form__label" for="contact-name">Namn</label>
-          <input
-            class="contact-form__input"
-            type="text"
-            id="contact-name"
-            name="name"
-            autocomplete="name"
-          />
-          <label class="contact-form__label" for="contact-email"
-            >E-postadress</label
-          >
-          <input
-            class="contact-form__input"
-            type="email"
-            id="contact-email"
-            name="email"
-            autocomplete="email"
-          />
+        <form class="contact-form" action="/tack.php" method="post">
+          <fieldset>
+            <legend>Fyll i nedanstående</legend>
+
+            <fieldset>
+              <label class="contact-form__label" for="contact-name"
+                >Namn:</label
+              >
+              <input
+                class="contact-form__input"
+                type="text"
+                id="contact-name"
+                name="name"
+                autocomplete="name"
+              />
+
+              <label class="contact-form__label" for="contact-email"
+                >E-postadress:</label
+              >
+              <input
+                class="contact-form__input"
+                type="email"
+                id="contact-email"
+                name="email"
+                autocomplete="email"
+              />
+            </fieldset>
+
+            <fieldset>
+              <legend>
+                Välj inom vilket/vilka kodspråk du vill få fler projekt-exempel
+                från:
+              </legend>
+              <label class="contact-form__label" for="contact-checkbox"
+                >java-script
+              </label>
+              <input
+                class="contact-form__checkbox"
+                type="checkbox"
+                id="contact-checkbox__js"
+                name="checkbox"
+              />
+              <label class="contact-form__label" for="contact-checkbox">
+                Python
+              </label>
+              <input
+                class="contact-form__checkbox"
+                type="checkbox"
+                id="contact-checkbox__py"
+                name="checkbox"
+              />
+              <label class="contact-form__label" for="contact-checkbox"
+                >php
+              </label>
+              <input
+                class="contact-form__checkbox"
+                type="checkbox"
+                id="contact-checkbox__php"
+                name="checkbox"
+              />
+            </fieldset>
+
+            <fieldset>
+              <legend>Beskriv vad du mer skulle vilja veta:</legend>
+              <label class="contact-form__label" for="contact-info"> </label>
+              <textarea
+                name="Kundinformation"
+                rows="5"
+                cols="50"
+                class="contact-form__input"
+                id="contact-info"
+                name="info"
+              >
+              </textarea>
+            </fieldset>
+          </fieldset>
           <button class="contact-form__submit" type="submit">Skicka</button>
         </form>
       </section>
