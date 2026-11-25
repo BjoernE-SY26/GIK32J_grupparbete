@@ -1,10 +1,16 @@
 <?php
 
 $name = $_POST["name"] ?? "";
-$email = $_POST["email"] ?? "";
 $telefon= $_POST ["telefon"] ??"";
+$email = $_POST["email"] ?? "";
 $lunguages = $_POST["languges"] ?? "";
 $contactMethod = $_POST["contact-method"] ?? "";
-$message = $_POST["message"] ?? "";
 
+require "tack.php"; 
+
+else {
+ header("Location: index.html")
+ exit;
+
+}
 ?>
