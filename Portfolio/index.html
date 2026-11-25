@@ -33,110 +33,166 @@
     </header>
 
     <main>
-      <section id="about-me">
-        <h2 class="section-about-me__h2">Om mig</h2>
-        <ul class="section-about-me__list">
-          <li class="section-about-me__text">
+      <section class="about-me">
+        <h2 class="about-me__title">Om mig</h2>
+        <ul class="about-me__list">
+          <li class="about-me__text">
             Jag (Mr.B), lär mig att skapa webbsidor med HTML och CSS. Här kan
             jag berätta lite om mig själv eller använda en påhittad
             presentation.
           </li>
-          <li class="section-about-me__text">
+          <li class="about-me__text">
             Mr.B går för närvarande första året på systemvetenskapliga
             programmet hos Högskolan Dalarna i Borlänge.
           </li>
-          <li class="section-about-me__text">
-            Mr.B har för tillfället inget mer att tillägga i ärendet, återkom
+          <li class="about-me__text">
+            Mr.B Har för tillfället inget mer att tillägga i ärendet, återkom
             gärna efter en viss tid så ska du se att det finns mer material på
             sidan då!
           </li>
         </ul>
+        <button
+          class="favoritglass__button"
+          type="button"
+          data-js-action="visa-favoritglass"
+          data-favoritglass="Pistageglass"
+        >
+          Avslöja min favoritglass
+        </button>
+
+        <!-- TARGET -->
+        <p
+          class="favoritglass__answer"
+          data-js-target="favoritglass-answer"
+        ></p>
       </section>
 
       <section id="contact">
         <h2 class="section-contact__h2">Kontakt</h2>
-        
+
         <p class="contact__text">
           För att få mer information om mig och mina tidigare arbeten, vänligen
           fyll i nedanstående så återkommer jag inom kort.
         </p>
         <form class="contact-form" action="controller.php" method="post">
-          <fieldset>
+          <fieldset class="contact-form__fieldset">
             <legend class="contact-form__legend">Fyll i nedanstående</legend>
 
-            
-              <label class="contact-form__label" for="contact-name"
-                >Namn:</label
-              >
-              <input
-                class="contact-form__input" type="text"
-                id="contact-name"  name="name" autocomplete="name"
-              />
+            <label class="contact-form__label" for="contact-name">Namn:</label>
+            <input
+              class="contact-form__input"
+              type="text"
+              id="contact-name"
+              name="name"
+              autocomplete="name"
+            />
 
-              <label class=" contact-form__label" for="contact-telefon">Telefon:</label>
-               <input class="contact-form__input" type="tel"
-             id="contact-telefon" name="telefon" autocomplete="tel">
+            <label class="contact-form__label" for="contact-telefon"
+              >Telefon:</label
+            >
+            <input
+              class="contact-form__input"
+              type="tel"
+              id="contact-telefon"
+              name="telefon"
+              autocomplete="tel"
+            />
 
-              <label class="contact-form__label" for="contact-email"
-                >E-postadress:</label
-              >
-              <input
-                class="contact-form__input" type="email"
-                id="contact-email" name="email" autocomplete="email"
-              />
-            </fieldset>
+            <label class="contact-form__label" for="contact-email"
+              >E-postadress:</label
+            >
+            <input
+              class="contact-form__input"
+              type="email"
+              id="contact-email"
+              name="email"
+              autocomplete="email"
+            />
+          </fieldset>
 
-            <fieldset>
-              <legend class="contact-checkbox__legend">
-                Välj inom vilket/vilka kodspråk du vill få fler projekt-exempel
-                från:
-              </legend>
-              <input type="checkbox" id="language-js" name="languages[]" value="JavaScript">
-                <label for="language-js">JavaScript</label>
-             
-              <input type="checkbox" id="language-python" name="languages[]" value="Python">
-              <label for="language-python">Python</label>
-          
-              <input type="checkbox" id="language-php" name="languages[]" value="PHP">
-                <label for="language-php">PHP</label>
-          
-              
-            </fieldset>
-            
-            <fieldset>
-              <legend> Vilken information är du intresserad av?</legend>
-              
-              <label for="contact-subject"> Välj ett område</label>
+          <fieldset class="contact-form__fieldset">
+            <legend class="contact-info__legend">
+              Välj inom vilket/vilka kodspråk du vill få fler projekt-exempel
+              från:
+            </legend>
+            <label class="contact-form__label" for="contact-checkbox__js">
+              JavaScript:
+            </label>
+            <input
+              class="contact-form__checkbox"
+              type="checkbox"
+              id="contact-checkbox__js"
+              name="languages[]"
+              value="JavaScript"
+            />
+            <label class="contact-form__label" for="contact-checkbox__py">
+              Python:
+            </label>
+            <input
+              class="contact-form__checkbox"
+              type="checkbox"
+              id="contact-checkbox__py"
+              name="languages[]"
+              value="Python"
+            />
+            <label class="contact-form__label" for="contact-checkbox__php">
+              PHP:
+            </label>
+            <input
+              class="contact-form__checkbox"
+              type="checkbox"
+              id="contact-checkbox__php"
+              name="languages[]"
+              value="PHP"
+            />
+          </fieldset>
 
-              <select id="contact-subject" name="subject">
-                <option value="Välj ett område">Välj ett område</option>
-                <option value="Syntax">Syntax</option>
-                <option value="Loopar">Loopar</option>
-                <option value="Debugging">Debugging</option>
-              </select>
-            
+          <fieldset class="contact-form__fieldset">
+            <legend class="contact-info__legend">
+              Vilken information är du intresserad av?
+            </legend>
 
-            </fieldset>
-            <fieldset>
-              <legend class="contact-info__legend">
-                Beskriv vad du mer skulle vilja veta:
-              </legend>
-              <label class="contact-form__label" for="contact-info"> Ditt meddelande </label>
-              <textarea
-                rows="5"
-                cols="50"
-                class="contact-form__input"
-                id="contact-info"
-                name="info"
-              ></textarea>
-            </fieldset>
-          <fieldset>
-            <legend> Hur vill du bli kontaktad?</legend>
+            <label for="contact-subject"> Välj ett område</label>
 
-            <input type="radio" id="contact-method-email" name="contact-method" value="E-post" >
+            <select id="contact-subject" name="subject">
+              <option value="Välj ett område">Välj ett område</option>
+              <option value="Syntax">Syntax</option>
+              <option value="Loopar">Loopar</option>
+              <option value="Debugging">Debugging</option>
+            </select>
+          </fieldset>
+          <fieldset class="contact-form_fieldset">
+            <legend class="contact-info__legend">
+              Beskriv vad du mer skulle vilja veta:
+            </legend>
+            <label class="contact-form__label" for="contact-info"></label>
+            <textarea
+              rows="5"
+              cols="50"
+              class="contact-form__input"
+              id="contact-info"
+              name="info"
+            ></textarea>
+          </fieldset>
+          <fieldset class="contact-form_fieldset">
+            <legend class="contact-info__legend">
+              Hur vill du bli kontaktad?
+            </legend>
+
+            <input
+              type="radio"
+              id="contact-method-email"
+              name="contact-method"
+              value="E-post"
+            />
             <label for="contact-method-email">E-post</label>
 
-            <input type="radio" id="contact-method-phone" name="contact-method" value="Telefon" >
+            <input
+              type="radio"
+              id="contact-method-phone"
+              name="contact-method"
+              value="Telefon"
+            />
             <label for="contact-method-phone">telefon</label>
           </fieldset>
           <button class="contact-form__submit" type="submit">Skicka</button>
