@@ -7,6 +7,17 @@ $emailError = $emailError ?? "";
 $languagesError = $languagesError ?? "";
 $contactMethodError = $contactMethodError ?? "";
 
+// deklaraation av variabel och för att kolla
+// behålla användarens tidigare formulärsvar
+$name = $name ?? "";
+$telefon = $telefon ?? "";
+$email = $email ?? "";
+$languages = $languages ?? "";
+$contactMethod = $contactMethod ?? "";
+$subject = $subject ?? "";
+$info = $info ?? "";
+
+
 ?>
 
 <!doctype html>
