@@ -14,12 +14,52 @@
   <body>
     <header class="experience">
       <a class="homepage-link" href="index.html">Tillbaka till startsidan</a>
-      <h1 class="experience__title">kompetenser och erfarenheter</h1>
-      <h2 class="experience__intro">
-        Här nedan listas mina kompetenser, erfarenheter samt utbildningar.
-      </h2>
+      <h1 class="experience__title">Favoritglass!</h1>
     </header>
-    <main></main>
+    <main>
+      <section class="glass">
+        <h2 class="glass__intro">Vilken är min favoritglass tror du?</h2>
+        <ul class="glass__list">
+          <li class="glass__item">Pistageglass</li>
+          <li class="glass__item">Vaniljglass</li>
+          <li class="glass__item">Citronsorbet</li>
+        </ul>
+
+        <!-- js-knapp (action/data. Text ska tillkomma om/när man trycker på knappen)-->
+        <button
+          class="glass__button"
+          type="button"
+          data-js-action="show-favoritglass"
+          data-favoritglass="Pistageglass"
+        >
+          Avslöja min favoritglass
+        </button>
+
+        <!-- TARGET - den tillkomna texten från js tillkommer i en annars tom p-->
+        <p
+          class="glass__answer"
+          data-js-target="favoritglass-answer"
+          aria-live="polite"
+        ></p>
+
+        <h2>Vilken är DIN favoritglass?</h2>
+        <button
+          class="din-glass__button"
+          type="button"
+          data-js-action="show-din-favoritglass"
+          data-din-favoritglass="Pistageglass"
+        >
+          Avslöja DIN favoritglass
+        </button>
+
+        <!-- TARGET - den tillkomna texten från js tillkommer i en annars tom p-->
+        <p
+          class="din-glass__answer"
+          data-js-target="din-favoritglass-answer"
+          aria-live="polite"
+        ></p>
+      </section>
+    </main>
     <footer class="footer">
       <p class="footer__text">Min portfolio – en övning i HTML och CSS.</p>
       <address class="mailto">
