@@ -51,6 +51,7 @@
             sidan då!
           </li>
         </ul>
+
         <!-- js-knapp (action/data. Text ska tillkomma om/när man trycker på knappen)-->
         <button
           class="favoritglass__button"
@@ -197,7 +198,19 @@
             />
             <label for="contact-method-phone">telefon</label>
           </fieldset>
-          <button class="contact-form__submit" type="submit">Skicka</button>
+          <button
+            class="contact-form__submit"
+            type="submit"
+            data-js-action="submitted-form"
+            data-information-after-submit="Tack för visat intresse"
+          >
+            Skicka
+          </button>
+          <p
+            class="contact-form__answer"
+            data-js-target="submit-answer"
+            aria-live="polite"
+          ></p>
         </form>
       </section>
     </main>
