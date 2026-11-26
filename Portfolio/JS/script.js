@@ -18,7 +18,29 @@ if (showFavoritglassButton && favoritglassAnswer) {
   });
 }
 
-//Submitt-knappen
+const showDinFavoritglassButton = document.querySelector(
+  '[data-js-action="show-din-favoritglass"]',
+); //min action - button i html som läggs i den nya konstanta variabeln
+
+const dinFavoritglassAnswer = document.querySelector(
+  '[data-js-target="din-favoritglass-answer"]',
+); //letar upp vart min target är i html, och lägger detta i en konst-variabel
+
+//if-sektionen gör så detta endast sker ifall glassknappen finns på sidan.
+if (showDinFavoritglassButton && dinFavoritglassAnswer) {
+  //Eventlistenern gör så att js reagerar när denna knapp (min data-js-action), används.
+  showDinFavoritglassButton.addEventListener("click", function () {
+    const dinFavoritglass = showDinFavoritglassButton.dataset.dinFavoritglass;
+
+    // TARGET - Visar nedanstående text + data där min 'target' ligger i html
+    dinFavoritglassAnswer.textContent =
+      "Det är ju självklart att din favoritglass också är " +
+      dinFavoritglass +
+      "! Det finns ingen annan som kan vara favoriten!";
+  });
+}
+
+//Submitt-knappen i index.html
 /*
 const showSubmitButton = document.querySelector(
   '[data-js-action="submitted-form"]',
