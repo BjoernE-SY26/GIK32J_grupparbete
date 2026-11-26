@@ -7,12 +7,11 @@ $emailError = $emailError ?? "";
 $languagesError = $languagesError ?? "";
 $contactMethodError = $contactMethodError ?? "";
 
-// deklaraation av variabel och för att kolla
-// behålla användarens tidigare formulärsvar
+// tidigare formulärsvar
 $name = $name ?? "";
 $telefon = $telefon ?? "";
 $email = $email ?? "";
-$languages = $languages ?? "";
+$languages = $languages ?? [];
 $contactMethod = $contactMethod ?? "";
 $subject = $subject ?? "";
 $info = $info ?? "";
@@ -225,7 +224,7 @@ $info = $info ?? "";
               id="contact-checkbox__js"
               name="languages[]"
               value="JavaScript"
-               <?php if (in_array("JavaScript", $languages ?? [])): ?>
+               <?php if (in_array("JavaScript", $languages, true)): ?>
         checked
     <?php endif; ?>
             />
@@ -238,7 +237,7 @@ $info = $info ?? "";
               id="contact-checkbox__py"
               name="languages[]"
               value="Python"
-               <?php if (in_array("Python", $languages ?? [])): ?>
+               <?php if (in_array("Python", $languages, true)): ?>
         checked
     <?php endif; ?>
             />
@@ -251,7 +250,7 @@ $info = $info ?? "";
               id="contact-checkbox__php"
               name="languages[]"
               value="PHP"
-              <?php if (in_array("PHP", $languages ?? [])): ?>
+              <?php if (in_array("PHP", $languages, true)): ?>
         checked
     <?php endif; ?>
             />
@@ -263,11 +262,24 @@ $info = $info ?? "";
             <label for="contact-subject"> Välj ett område</label>
 <!-- Här lades även if satser för att användaren inte behöver göra om alla valen-->
             <select id="contact-subject" name="subject">
-              <option value="">Välj ett område</option>
-              <option value="Syntax">Syntax<?php if ($subject === "Syntax") echo "selected"; ?>>Syntax</option>
-              <option value="Loopar">Loopar<?php if ($subject === "Loopar") echo "selected"; ?>>Loopar</option>
-              <option value="Debugging">Debugging <?php if ($subject === "Debugging") echo "selected"; ?>>Debugging</option>
-            </select>
+
+    <option value="" <?php if ($subject === "") echo "selected"; ?>>
+    Välj ett område
+</option>
+
+    <option value="Syntax" <?php if ($subject === "Syntax") echo "selected"; ?>>
+        Syntax
+    </option>
+
+    <option value="Loopar" <?php if ($subject === "Loopar") echo "selected"; ?>>
+        Loopar
+    </option>
+
+    <option value="Debugging" <?php if ($subject === "Debugging") echo "selected"; ?>>
+        Debugging
+    </option>
+
+</select>
             <legend class="contact-info__legend">
               Beskriv vad du mer skulle vilja veta:
             </legend>
@@ -279,7 +291,7 @@ $info = $info ?? "";
               id="contact-info"
               name="info"
               ><?php echo htmlspecialchars($info, ENT_QUOTES, 'UTF-8'); ?></textarea>
-            ></textarea>
+
             <legend class="contact-info__legend">
               Hur vill du bli kontaktad?
             </legend>
