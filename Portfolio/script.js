@@ -1,5 +1,5 @@
 const showFavoritglassButton = document.querySelector(
-  '[data-js-action="visa-favoritglass"]',
+  '[data-js-action="show-favoritglass"]',
 ); //min action - button i html som läggs i den nya konstanta variabeln
 
 const favoritglassAnswer = document.querySelector(
