@@ -9,3 +9,248 @@ $contactMethodError = $contactMethodError ?? "";
 
 ?>
 
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio – Mr. B</title>
+    <meta
+      name="description"
+      content="Här finner du den samlade portfolion av arbeten som skrivits av Mr.B. under hans studietid i Borlänge."
+    />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <script src="JS/script.js" defer></script>
+  </head>
+  <body>
+    <a href="#main-content" id="skip-link"> Hoppa till huvudinnehåll </a>
+    <header class="header">
+      <h1 class="header__title">Min portfolio</h1>
+      <p class="header__intro">
+        Hej! Här presenterar jag mig och mina projekt.
+      </p>
+      <nav class="nav" aria-label="Huvudnavigering">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="#about-me">Om mig</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#contact">Kontakt</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="projekt.html">Projekt</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="kompetenser.html">Kompetenser</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="glass.html">glass</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="about-me" id="about-me">
+        <h2 class="about-me__title">Om mig</h2>
+        <p class="about-me__text">
+          Jag (Mr.B), lär mig att skapa webbsidor med HTML och CSS. Här kan jag
+          berätta lite om mig själv eller använda en påhittad presentation.
+        </p>
+        <p class="about-me__text">
+          Mr.B går för närvarande första året på systemvetenskapliga programmet
+          hos Högskolan Dalarna i Borlänge.
+        </p>
+        <p class="about-me__text">
+          Mr.B Har för tillfället inget mer att tillägga i ärendet, återkom
+          gärna efter en viss tid så ska du se att det finns mer material på
+          sidan då!
+        </p>
+        <figure>
+          <img
+            src="Bilder/Gemini_Generated_Image_Mr.B.jpeg"
+            alt="Bild: AI-genererad illustration av en mystisk man, skapad med Google Gemini (2026)."
+            width="400"
+            height="300"
+          />
+
+          <figcaption id="bildtext">
+            Siluett av en mystisk man, AI-genererad bild.
+          </figcaption>
+        </figure>
+
+        <!-- js-knapp (action/data. Text ska tillkomma om/när man trycker på knappen)-->
+        <button
+          class="favoritglass__button"
+          type="button"
+          data-js-action="show-favoritglass"
+          data-favoritglass="Pistageglass"
+        >
+          Avslöja min favoritglass
+        </button>
+
+        <!-- TARGET - den tillkomna texten från js tillkommer i en annars tom p-->
+        <p
+          class="favoritglass__answer"
+          data-js-target="favoritglass-answer"
+          aria-live="polite"
+        ></p>
+      </section>
+
+      <section class="contact" id="contact">
+        <h2 class="contact__title">Kontakt</h2>
+
+        <p class="contact__text">
+          För att få mer information om mig och mina tidigare arbeten, vänligen
+          fyll i nedanstående så återkommer jag inom kort.
+        </p>
+        <!-- Ett endaste fieldset för hela formuläret mer semantiskt -->
+        <form class="contact-form" action="controller.php" method="post">
+             <?php if (
+             !empty($nameError) ||
+             !empty($telefonError) ||
+             !empty($emailError) ||
+             !empty($languagesError) ||
+             !empty($contactMethodError)
+    ): ?>
+          <fieldset class="contact-form__fieldset">
+            <legend class="contact-form__legend">Fyll i nedanstående</legend>
+
+            <label class="contact-form__label" for="contact-name">Namn:</label>
+            <input
+              class="contact-form__input"
+              type="text"
+              id="contact-name"
+              name="name"
+              autocomplete="name"
+            />
+
+            <label class="contact-form__label" for="contact-telefon"
+              >Telefon:</label
+            >
+            <input
+              class="contact-form__input"
+              type="tel"
+              id="contact-telefon"
+              name="telefon"
+              autocomplete="tel"
+            />
+
+            <label class="contact-form__label" for="contact-email"
+              >E-postadress:</label
+            >
+            <input
+              class="contact-form__input"
+              type="email"
+              id="contact-email"
+              name="email"
+              autocomplete="email"
+            />
+
+            <legend class="contact-info__legend">
+              Välj inom vilket/vilka kodspråk du vill få fler projekt-exempel
+              från:
+            </legend>
+            <label class="contact-form__label" for="contact-checkbox__js">
+              JavaScript:
+            </label>
+            <input
+              class="contact-form__checkbox"
+              type="checkbox"
+              id="contact-checkbox__js"
+              name="languages[]"
+              value="JavaScript"
+            />
+            <label class="contact-form__label" for="contact-checkbox__py">
+              Python:
+            </label>
+            <input
+              class="contact-form__checkbox"
+              type="checkbox"
+              id="contact-checkbox__py"
+              name="languages[]"
+              value="Python"
+            />
+            <label class="contact-form__label" for="contact-checkbox__php">
+              PHP:
+            </label>
+            <input
+              class="contact-form__checkbox"
+              type="checkbox"
+              id="contact-checkbox__php"
+              name="languages[]"
+              value="PHP"
+            />
+
+            <legend class="contact-info__legend">
+              Vilken information är du intresserad av?
+            </legend>
+
+            <label for="contact-subject"> Välj ett område</label>
+
+            <select id="contact-subject" name="subject">
+              <option value="Välj ett område">Välj ett område</option>
+              <option value="Syntax">Syntax</option>
+              <option value="Loopar">Loopar</option>
+              <option value="Debugging">Debugging</option>
+            </select>
+            <legend class="contact-info__legend">
+              Beskriv vad du mer skulle vilja veta:
+            </legend>
+            <label class="contact-form__label" for="contact-info"></label>
+            <textarea
+              rows="5"
+              cols="50"
+              class="contact-form__input"
+              id="contact-info"
+              name="info"
+            ></textarea>
+            <legend class="contact-info__legend">
+              Hur vill du bli kontaktad?
+            </legend>
+
+            <input
+              type="radio"
+              id="contact-method-email"
+              name="contact-method"
+              value="E-post"
+            />
+            <label for="contact-method-email">E-post</label>
+
+            <input
+              type="radio"
+              id="contact-method-phone"
+              name="contact-method"
+              value="Telefon"
+            />
+            <label for="contact-method-phone">telefon</label>
+          </fieldset>
+          <button
+            class="contact-form__submit"
+            type="submit"
+            data-js-action="submitted-form"
+            data-information-after-submit="Tack för visat intresse"
+          >
+            Skicka
+          </button>
+          <p
+            class="contact-form__answer"
+            data-js-target="submit-answer"
+            aria-live="polite"
+          ></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__text">Min portfolio – en övning i HTML och CSS.</p>
+      <address class="footer__mailto">
+        <a
+          class="footer__mailto-link"
+          href="mailto:h26isago@du.se?subject=reader feedback"
+          >Mejla vid frågor:h26isago@<!--minmejl-->du.se</a
+        >
+      </address>
+    </footer>
+  </body>
+</html>
