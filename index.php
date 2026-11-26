@@ -126,7 +126,7 @@ $info = $info ?? "";
              !empty($contactMethodError)
            ): ?>
         <!-- sektionen för felmeddelande med en list, kan göras på andra sätt-->
-        <!-- felmeddelande dock bara när fältet lämas tom, inte vid feltecken osv -->
+       
         <section class="contact-form__error-summary">
 
             <h2 class="contact-form__error-title">
@@ -261,12 +261,12 @@ $info = $info ?? "";
             </legend>
 
             <label for="contact-subject"> Välj ett område</label>
-
+<!-- Här lades även if satser för att användaren inte behöver göra om alla valen-->
             <select id="contact-subject" name="subject">
               <option value="">Välj ett område</option>
-              <option value="Syntax">Syntax</option>
-              <option value="Loopar">Loopar</option>
-              <option value="Debugging">Debugging</option>
+              <option value="Syntax">Syntax<?php if ($subject === "Syntax") echo "selected"; ?>>Syntax</option>
+              <option value="Loopar">Loopar<?php if ($subject === "Loopar") echo "selected"; ?>>Loopar</option>
+              <option value="Debugging">Debugging <?php if ($subject === "Debugging") echo "selected"; ?>>Debugging</option>
             </select>
             <legend class="contact-info__legend">
               Beskriv vad du mer skulle vilja veta:
@@ -278,6 +278,7 @@ $info = $info ?? "";
               class="contact-form__input"
               id="contact-info"
               name="info"
+              ><?php echo htmlspecialchars($info, ENT_QUOTES, 'UTF-8'); ?></textarea>
             ></textarea>
             <legend class="contact-info__legend">
               Hur vill du bli kontaktad?

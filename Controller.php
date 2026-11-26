@@ -5,7 +5,11 @@ if ($_SERVER ["REQUEST_METHOD"] === "POST"){
     $name = trim($_POST["name"] ?? "");
     $telefon= trim($_POST ["telefon"] ??"");
     $email =trim($_POST["email"] ?? "");
-    $languages = $_POST["languages"] ??[];
+    $languages = $_POST["languages"] ?? [];
+
+if (!is_array($languages)) {
+    $languages = [];
+}
     $subject= $_POST ["subject"] ??"";
     $info= trim($_POST ["info"] ?? "" );
     $contactMethod = $_POST["contact-method"] ?? "";
