@@ -6,13 +6,17 @@ const favoritglassAnswer = document.querySelector(
   '[data-js-target="favoritglass-answer"]',
 ); //letar upp vart min target är i html, och lägger detta i en konst-variabel
 
-//Eventlistenern gör så att js reagerar när denna knapp (min data-js-action), används.
-showFavoritglassButton.addEventListener("click", function () {
-  const favoritglass = showFavoritglassButton.dataset.favoritglass;
+//if-sektionen gör så detta endast sker ifall glassknappen finns på sidan.
+if (showFavoritglassButton && favoritglassAnswer) {
+  //Eventlistenern gör så att js reagerar när denna knapp (min data-js-action), används.
+  showFavoritglassButton.addEventListener("click", function () {
+    const favoritglass = showFavoritglassButton.dataset.favoritglass;
 
-  // TARGET - Visar nedanstående text + data där min 'target' ligger i html
-  favoritglassAnswer.textContent = "Min favoritglass är " + favoritglass + "!";
-});
+    // TARGET - Visar nedanstående text + data där min 'target' ligger i html
+    favoritglassAnswer.textContent =
+      "Min favoritglass är " + favoritglass + "!";
+  });
+}
 
 //Submitt-knappen
 /*
