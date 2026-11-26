@@ -128,10 +128,10 @@
               autocomplete="email"
             />
 
-            <legend class="contact-info__legend">
+            <h3 class="contact-form__title">
               Välj inom vilket/vilka kodspråk du vill få fler projekt-exempel
               från:
-            </legend>
+            </h3>
             <label class="contact-form__label" for="contact-checkbox__js">
               JavaScript:
             </label>
@@ -163,9 +163,9 @@
               value="PHP"
             />
 
-            <legend class="contact-info__legend">
+            <h3 class="contact-form__title">
               Vilken information är du intresserad av?
-            </legend>
+            </h3>
 
             <label for="contact-subject"> Välj ett område</label>
 
@@ -175,9 +175,9 @@
               <option value="Loopar">Loopar</option>
               <option value="Debugging">Debugging</option>
             </select>
-            <legend class="contact-info__legend">
+            <h3 class="contact-form__title">
               Beskriv vad du mer skulle vilja veta:
-            </legend>
+            </h3>
             <label class="contact-form__label" for="contact-info"></label>
             <textarea
               rows="5"
@@ -186,12 +186,11 @@
               id="contact-info"
               name="info"
             ></textarea>
-            <legend class="contact-info__legend">
-              Hur vill du bli kontaktad?
-            </legend>
+            <h3 class="contact-form__title">Hur vill du bli kontaktad?</h3>
 
             <input
               type="radio"
+              class="contact-form__radio"
               id="contact-method-email"
               name="contact-method"
               value="E-post"
@@ -200,6 +199,7 @@
 
             <input
               type="radio"
+              class="contact-form__radio"
               id="contact-method-phone"
               name="contact-method"
               value="Telefon"
