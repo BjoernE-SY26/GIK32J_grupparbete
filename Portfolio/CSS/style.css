@@ -1,4 +1,7 @@
-#skip-link {
+*,
+*::before,
+::after,
+:root #skip-link {
   position: absolute;
   top: -100px;
   left: 10px;
