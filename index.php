@@ -115,7 +115,7 @@ $contactMethodError = $contactMethodError ?? "";
              !empty($contactMethodError)
            ): ?>
         <!-- sektionen för felmeddelande med en list, kan göras på andra sätt-->
-        <!-- felmeddelande dock bara när fältet lämas tom -->
+        <!-- felmeddelande dock bara när fältet lämas tom, inte vid feltecken osv -->
         <section class="contact-form__error-summary">
 
             <h2 class="contact-form__error-title">
@@ -161,7 +161,9 @@ $contactMethodError = $contactMethodError ?? "";
         </section>
 
     <?php endif; ?>
-
+<!-- lägger till ett php echo för att 
+ användaren inte behöver skriva t.ex 
+ sitt namn på nyttt vi fel på andra ställen -->
           <fieldset class="contact-form__fieldset">
             <legend class="contact-form__legend">Fyll i nedanstående</legend>
 
@@ -172,6 +174,7 @@ $contactMethodError = $contactMethodError ?? "";
               id="contact-name"
               name="name"
               autocomplete="name"
+              value="<?php echo htmlspecialchars ($name ??'', ENT_QUOTES, 'UTF-8'); ?>"
             />
 
             <label class="contact-form__label" for="contact-telefon"
@@ -183,6 +186,7 @@ $contactMethodError = $contactMethodError ?? "";
               id="contact-telefon"
               name="telefon"
               autocomplete="tel"
+              value="<?php echo htmlspecialchars ($telefon ??'', ENT_QUOTES, 'UTF-8'); ?>"
             />
 
             <label class="contact-form__label" for="contact-email"
@@ -194,6 +198,7 @@ $contactMethodError = $contactMethodError ?? "";
               id="contact-email"
               name="email"
               autocomplete="email"
+              value="<?php echo htmlspecialchars ($email ??'', ENT_QUOTES, 'UTF-8'); ?>"
             />
 
             <legend class="contact-info__legend">
@@ -209,6 +214,9 @@ $contactMethodError = $contactMethodError ?? "";
               id="contact-checkbox__js"
               name="languages[]"
               value="JavaScript"
+               <?php if (in_array("JavaScript", $languages ?? [])): ?>
+        checked
+    <?php endif; ?>
             />
             <label class="contact-form__label" for="contact-checkbox__py">
               Python:
@@ -219,6 +227,9 @@ $contactMethodError = $contactMethodError ?? "";
               id="contact-checkbox__py"
               name="languages[]"
               value="Python"
+               <?php if (in_array("Python", $languages ?? [])): ?>
+        checked
+    <?php endif; ?>
             />
             <label class="contact-form__label" for="contact-checkbox__php">
               PHP:
@@ -229,6 +240,9 @@ $contactMethodError = $contactMethodError ?? "";
               id="contact-checkbox__php"
               name="languages[]"
               value="PHP"
+              <?php if (in_array("PHP", $languages ?? [])): ?>
+        checked
+    <?php endif; ?>
             />
 
             <legend class="contact-info__legend">
@@ -238,7 +252,7 @@ $contactMethodError = $contactMethodError ?? "";
             <label for="contact-subject"> Välj ett område</label>
 
             <select id="contact-subject" name="subject">
-              <option value="Välj ett område">Välj ett område</option>
+              <option value="">Välj ett område</option>
               <option value="Syntax">Syntax</option>
               <option value="Loopar">Loopar</option>
               <option value="Debugging">Debugging</option>
@@ -263,6 +277,9 @@ $contactMethodError = $contactMethodError ?? "";
               id="contact-method-email"
               name="contact-method"
               value="E-post"
+            <?php if (($contactMethod ?? "") === "E-post"): ?>
+                 checked
+             <?php endif; ?>
             />
             <label for="contact-method-email">E-post</label>
 
@@ -271,6 +288,9 @@ $contactMethodError = $contactMethodError ?? "";
               id="contact-method-phone"
               name="contact-method"
               value="Telefon"
+              <?php if (($contactMethod ?? "") === "Telefon"): ?>
+                 checked
+            <?php endif; ?>
             />
             <label for="contact-method-phone">telefon</label>
           </fieldset>
