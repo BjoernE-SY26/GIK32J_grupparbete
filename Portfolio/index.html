@@ -12,7 +12,7 @@
     <script src="JS/script.js" defer></script>
   </head>
   <body>
-    <a href="#main-content" class="skip-link"> Hoppa till huvudinnehåll </a>
+    <a href="#main-content" id="skip-link"> Hoppa till huvudinnehåll </a>
     <header class="header">
       <h1 class="header__title">Min portfolio</h1>
       <p class="header__intro">
@@ -27,12 +27,10 @@
             <a class="nav__link" href="#contact">Kontakt</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="projekt.html" target="_blank">Projekt</a>
+            <a class="nav__link" href="projekt.html">Projekt</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="kompetenser.html" target="_blank"
-              >Kompetenser</a
-            >
+            <a class="nav__link" href="kompetenser.html">Kompetenser</a>
           </li>
         </ul>
       </nav>
@@ -41,22 +39,31 @@
     <main id="main-content">
       <section class="about-me" id="about-me">
         <h2 class="about-me__title">Om mig</h2>
-        <ul class="about-me__list">
-          <li class="about-me__text">
-            Jag (Mr.B), lär mig att skapa webbsidor med HTML och CSS. Här kan
-            jag berätta lite om mig själv eller använda en påhittad
-            presentation.
-          </li>
-          <li class="about-me__text">
-            Mr.B går för närvarande första året på systemvetenskapliga
-            programmet hos Högskolan Dalarna i Borlänge.
-          </li>
-          <li class="about-me__text">
-            Mr.B Har för tillfället inget mer att tillägga i ärendet, återkom
-            gärna efter en viss tid så ska du se att det finns mer material på
-            sidan då!
-          </li>
-        </ul>
+        <p class="about-me__text">
+          Jag (Mr.B), lär mig att skapa webbsidor med HTML och CSS. Här kan jag
+          berätta lite om mig själv eller använda en påhittad presentation.
+        </p>
+        <p class="about-me__text">
+          Mr.B går för närvarande första året på systemvetenskapliga programmet
+          hos Högskolan Dalarna i Borlänge.
+        </p>
+        <p class="about-me__text">
+          Mr.B Har för tillfället inget mer att tillägga i ärendet, återkom
+          gärna efter en viss tid så ska du se att det finns mer material på
+          sidan då!
+        </p>
+        <figure>
+          <img
+            src="Bilder/Gemini_Generated_Image_Mr.B.jpeg"
+            alt="Bild: AI-genererad illustration av en mystisk man, skapad med Google Gemini (2026)."
+            width="400"
+            height="300"
+          />
+
+          <figcaption id="bildtext">
+            Siluett av en mystisk man, AI-genererad bild.
+          </figcaption>
+        </figure>
 
         <!-- js-knapp (action/data. Text ska tillkomma om/när man trycker på knappen)-->
         <button
@@ -170,7 +177,7 @@
               <option value="Debugging">Debugging</option>
             </select>
           </fieldset>
-          <fieldset class="contact-form_fieldset">
+          <fieldset class="contact-form__fieldset">
             <legend class="contact-info__legend">
               Beskriv vad du mer skulle vilja veta:
             </legend>
@@ -183,7 +190,7 @@
               name="info"
             ></textarea>
           </fieldset>
-          <fieldset class="contact-form_fieldset">
+          <fieldset class="contact-form__fieldset">
             <legend class="contact-info__legend">
               Hur vill du bli kontaktad?
             </legend>
@@ -224,7 +231,7 @@
     <footer class="footer">
       <p class="footer__text">Min portfolio – en övning i HTML och CSS.</p>
       <address class="mailto">
-        <a href="mailto:h26isago@du.se ?subject=reader feedback"
+        <a href="mailto:h26isago@du.se?subject=reader feedback"
           >Mejla vid frågor:h26isago@<!--minmejl-->du.se</a
         >
       </address>
