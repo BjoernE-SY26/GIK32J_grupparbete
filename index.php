@@ -106,13 +106,62 @@ $contactMethodError = $contactMethodError ?? "";
         </p>
         <!-- Ett endaste fieldset för hela formuläret mer semantiskt -->
         <form class="contact-form" action="controller.php" method="post">
-             <?php if (
+          <!-- If sats som visas direkt i index.php om det blir följande fel-->
+          <?php if (
              !empty($nameError) ||
              !empty($telefonError) ||
              !empty($emailError) ||
              !empty($languagesError) ||
              !empty($contactMethodError)
-    ): ?>
+           ): ?>
+        <!-- sektionen för felmeddelande med en list, kan göras på andra sätt-->
+        <!-- felmeddelande dock bara när fältet lämas tom -->
+        <section class="contact-form__error-summary">
+
+            <h2 class="contact-form__error-title">
+                Något gick fel!
+            </h2>
+
+            <p>Kontrollera dessa punkter:</p>
+
+            <ul class="contact-form__error-list">
+
+                <?php if (!empty($nameError)): ?>
+                    <li>
+                        <?php echo htmlspecialchars($nameError, ENT_QUOTES, 'UTF-8'); ?>
+                    </li>
+                <?php endif; ?>
+
+                <?php if (!empty($telefonError)): ?>
+                    <li>
+                        <?php echo htmlspecialchars($telefonError, ENT_QUOTES, 'UTF-8'); ?>
+                    </li>
+                <?php endif; ?>
+
+                <?php if (!empty($emailError)): ?>
+                    <li>
+                        <?php echo htmlspecialchars($emailError, ENT_QUOTES, 'UTF-8'); ?>
+                    </li>
+                <?php endif; ?>
+
+                <?php if (!empty($languagesError)): ?>
+                    <li>
+                        <?php echo htmlspecialchars($languagesError, ENT_QUOTES, 'UTF-8'); ?>
+                    </li>
+                <?php endif; ?>
+
+                <?php if (!empty($contactMethodError)): ?>
+                    <li>
+                        <?php echo htmlspecialchars($contactMethodError, ENT_QUOTES, 'UTF-8'); ?>
+                    </li>
+                <?php endif; ?>
+
+            </ul>
+
+        </section>
+
+    <?php endif; ?>
+
           <fieldset class="contact-form__fieldset">
             <legend class="contact-form__legend">Fyll i nedanstående</legend>
 
