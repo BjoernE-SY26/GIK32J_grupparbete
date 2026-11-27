@@ -340,8 +340,8 @@ $info = $info ?? "";
       <address class="footer__mailto">
         <a
           class="footer__mailto-link"
-          href="mailto:h26isago@du.se?subject=reader feedback"
-          >Mejla vid frågor:h26isago@<!--minmejl-->du.se</a
+          href="mailto:h26mr.b@du.se?subject=reader_feedback"
+          >Mejla vid frågor:h26mr.b@<!--minmejl-->du.se</a
         >
       </address>
     </footer>

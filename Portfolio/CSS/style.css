@@ -132,6 +132,9 @@
 .table {
 }
 
+.table__intro {
+}
+
 .table__table {
 }
 
@@ -164,6 +167,9 @@
 */
 
 .projectcard {
+}
+
+.projectcard__intro {
 }
 
 .projectcard__article {
