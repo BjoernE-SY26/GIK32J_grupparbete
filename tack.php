@@ -1,48 +1,63 @@
+```php
+<?php
+// Skydda informationen innan den skrivs ut
+$name = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
+$telefon = htmlspecialchars($telefon, ENT_QUOTES, 'UTF-8');
+$email = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
+$subject = htmlspecialchars($subject, ENT_QUOTES, 'UTF-8');
+$info = htmlspecialchars($info, ENT_QUOTES, 'UTF-8');
+$contactMethod = htmlspecialchars($contactMethod, ENT_QUOTES, 'UTF-8');
+
+// Hantera programmeringsspråken
+$languagesDisplay = "";
+
+if (is_array($languages) && !empty($languages)) {
+    $languagesDisplay = htmlspecialchars(
+        implode(", ", $languages),
+        ENT_QUOTES,
+        'UTF-8'
+    );
+} else {
+    $languagesDisplay = "Inga språk valda";
+}
+?>
+
 <!doctype html>
 <html lang="sv">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tack för din förfrågan</title>
-    <meta
-      name="description"
-      content="Tack för att du kontaktade mig."
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tack för ditt meddelande</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-  <body>
-
-    <header class="header">
-      <h1 class="header__title">Tack för din förfrågan!</h1>
-      <p class="header__intro">
-        Tack för att du tog dig tid att kontakta mig.
-      </p>
-    </header>
-
+<body>
     <main>
-      <section class="thank-you">
-        <h2 class="thank-you__title">Dina uppgifter</h2>
+        <section class="thank-you">
+            <h1 class="thank-you__title">Tack för ditt meddelande!</h1>
 
-        <p class="thank-you__text">
-          Tack, <?php echo htmlspecialchars($name); ?>!
-          Jag har tagit emot din förfrågan.
-        </p>
+            <p class="thank-you__text">
+                Dina uppgifter har skickats in.
+            </p>
 
-        <p>
-          Jag återkommer till dig via
-          <?php echo htmlspecialchars($contactMethod); ?>.
-        </p>
+            <h2 class="thank-you__subtitle">
+                Sammanfattning av dina uppgifter
+            </h2>
 
-        <a href="index.php">Tillbaka till startsidan</a>
-      </section>
+            <ul class="thank-you__list">
+                <li>Namn: <?= $name ?></li>
+                <li>Telefon: <?= $telefon ?></li>
+                <li>E-post: <?= $email ?></li>
+                <li>Programmeringsspråk: <?= $languagesDisplay ?></li>
+                <li>Ämne: <?= $subject ?></li>
+                <li>Önskad kontaktmetod: <?= $contactMethod ?></li>
+                <li>Övrig information: <?= $info ?></li>
+            </ul>
+
+            <a class="thank-you__link" href="index.php">
+                Tillbaka till startsidan
+            </a>
+        </section>
     </main>
-
-    <footer class="footer">
-      <p class="footer__text">
-        Min portfolio – en övning i HTML och CSS.
-      </p>
-    </footer>
-
-  </body>
+</body>
 </html>

@@ -1,3 +1,24 @@
+<!-- generella felmeddelanden -->
+<?php 
+
+$nameError = $nameError ?? "";
+$telefonError = $telefonError ?? "";
+$emailError = $emailError ?? ""; 
+$languagesError = $languagesError ?? "";
+$contactMethodError = $contactMethodError ?? "";
+
+// tidigare formulärsvar
+$name = $name ?? "";
+$telefon = $telefon ?? "";
+$email = $email ?? "";
+$languages = $languages ?? [];
+$contactMethod = $contactMethod ?? "";
+$subject = $subject ?? "";
+$info = $info ?? "";
+
+
+?>
+
 <!doctype html>
 <html lang="sv">
   <head>
@@ -12,16 +33,12 @@
     <script src="JS/script.js" defer></script>
   </head>
   <body>
-    <!--En dold länk till main-content för navigering WCAG-->
     <a href="#main-content" id="skip-link"> Hoppa till huvudinnehåll </a>
-
     <header class="header">
       <h1 class="header__title">Min portfolio</h1>
       <p class="header__intro">
-        Välkommen! På denna samt länkande sidor, finner du mer information om
-        mig samt mina framtida projekt.
+        Hej! Här presenterar jag mig och mina projekt.
       </p>
-      <!--Navigationsmenyn: lista med länkar till denna med aria-label-->
       <nav class="nav" aria-label="Huvudnavigering">
         <ul class="nav__list">
           <li class="nav__item">
@@ -59,7 +76,7 @@
           gärna efter en viss tid så ska du se att det finns mer material på
           sidan då!
         </p>
-        <figure class="about-me__figure">
+        <figure>
           <img
             src="Bilder/Gemini_Generated_Image_Mr.B.jpeg"
             alt="Bild: AI-genererad illustration av en mystisk man, skapad med Google Gemini (2026)."
@@ -67,10 +84,27 @@
             height="300"
           />
 
-          <figcaption id="about-me__caption">
+          <figcaption id="bildtext">
             Siluett av en mystisk man, AI-genererad bild.
           </figcaption>
         </figure>
+
+        <!-- js-knapp (action/data. Text ska tillkomma om/när man trycker på knappen)-->
+        <button
+          class="favoritglass__button"
+          type="button"
+          data-js-action="show-favoritglass"
+          data-favoritglass="Pistageglass"
+        >
+          Avslöja min favoritglass
+        </button>
+
+        <!-- TARGET - den tillkomna texten från js tillkommer i en annars tom p-->
+        <p
+          class="favoritglass__answer"
+          data-js-target="favoritglass-answer"
+          aria-live="polite"
+        ></p>
       </section>
 
       <section class="contact" id="contact">
@@ -80,7 +114,66 @@
           För att få mer information om mig och mina tidigare arbeten, vänligen
           fyll i nedanstående så återkommer jag inom kort.
         </p>
+        <!-- Ett endaste fieldset för hela formuläret mer semantiskt -->
         <form class="contact-form" action="controller.php" method="post">
+          <!-- If sats som visas direkt i index.php om det blir följande fel-->
+          <?php if (
+             !empty($nameError) ||
+             !empty($telefonError) ||
+             !empty($emailError) ||
+             !empty($languagesError) ||
+             !empty($contactMethodError)
+           ): ?>
+        <!-- sektionen för felmeddelande med en list, kan göras på andra sätt-->
+       
+        <section class="contact-form__error-summary">
+
+            <h2 class="contact-form__error-title">
+                Något gick fel!
+            </h2>
+
+            <p>Kontrollera dessa punkter:</p>
+
+            <ul class="contact-form__error-list">
+
+                <?php if (!empty($nameError)): ?>
+                    <li>
+                        <?php echo htmlspecialchars($nameError, ENT_QUOTES, 'UTF-8'); ?>
+                    </li>
+                <?php endif; ?>
+
+                <?php if (!empty($telefonError)): ?>
+                    <li>
+                        <?php echo htmlspecialchars($telefonError, ENT_QUOTES, 'UTF-8'); ?>
+                    </li>
+                <?php endif; ?>
+
+                <?php if (!empty($emailError)): ?>
+                    <li>
+                        <?php echo htmlspecialchars($emailError, ENT_QUOTES, 'UTF-8'); ?>
+                    </li>
+                <?php endif; ?>
+
+                <?php if (!empty($languagesError)): ?>
+                    <li>
+                        <?php echo htmlspecialchars($languagesError, ENT_QUOTES, 'UTF-8'); ?>
+                    </li>
+                <?php endif; ?>
+
+                <?php if (!empty($contactMethodError)): ?>
+                    <li>
+                        <?php echo htmlspecialchars($contactMethodError, ENT_QUOTES, 'UTF-8'); ?>
+                    </li>
+                <?php endif; ?>
+
+            </ul>
+
+        </section>
+
+    <?php endif; ?>
+<!-- lägger till ett php echo för att 
+ användaren inte behöver skriva t.ex 
+ sitt namn på nyttt vi fel på andra ställen -->
           <fieldset class="contact-form__fieldset">
             <legend class="contact-form__legend">Fyll i nedanstående</legend>
 
@@ -91,6 +184,7 @@
               id="contact-name"
               name="name"
               autocomplete="name"
+              value="<?php echo htmlspecialchars ($name ??'', ENT_QUOTES, 'UTF-8'); ?>"
             />
 
             <label class="contact-form__label" for="contact-telefon"
@@ -102,6 +196,7 @@
               id="contact-telefon"
               name="telefon"
               autocomplete="tel"
+              value="<?php echo htmlspecialchars ($telefon ??'', ENT_QUOTES, 'UTF-8'); ?>"
             />
 
             <label class="contact-form__label" for="contact-email"
@@ -113,12 +208,13 @@
               id="contact-email"
               name="email"
               autocomplete="email"
+              value="<?php echo htmlspecialchars ($email ??'', ENT_QUOTES, 'UTF-8'); ?>"
             />
 
-            <h3 class="contact-form__title">
+            <legend class="contact-info__legend">
               Välj inom vilket/vilka kodspråk du vill få fler projekt-exempel
               från:
-            </h3>
+            </legend>
             <label class="contact-form__label" for="contact-checkbox__js">
               JavaScript:
             </label>
@@ -128,6 +224,9 @@
               id="contact-checkbox__js"
               name="languages[]"
               value="JavaScript"
+               <?php if (in_array("JavaScript", $languages, true)): ?>
+        checked
+    <?php endif; ?>
             />
             <label class="contact-form__label" for="contact-checkbox__py">
               Python:
@@ -138,6 +237,9 @@
               id="contact-checkbox__py"
               name="languages[]"
               value="Python"
+               <?php if (in_array("Python", $languages, true)): ?>
+        checked
+    <?php endif; ?>
             />
             <label class="contact-form__label" for="contact-checkbox__php">
               PHP:
@@ -148,63 +250,82 @@
               id="contact-checkbox__php"
               name="languages[]"
               value="PHP"
+              <?php if (in_array("PHP", $languages, true)): ?>
+        checked
+    <?php endif; ?>
             />
 
-            <h3 class="contact-form__title">
+            <legend class="contact-info__legend">
               Vilken information är du intresserad av?
-            </h3>
+            </legend>
 
             <label for="contact-subject"> Välj ett område</label>
-
+<!-- Här lades även if satser för att användaren inte behöver göra om alla valen-->
             <select id="contact-subject" name="subject">
-              <option value="Välj ett område">Välj ett område</option>
-              <option value="Syntax">Syntax</option>
-              <option value="Loopar">Loopar</option>
-              <option value="Debugging">Debugging</option>
-            </select>
-            <h3 class="contact-form__title">
+
+    <option value="" <?php if ($subject === "") echo "selected"; ?>>
+    Välj ett område
+</option>
+
+    <option value="Syntax" <?php if ($subject === "Syntax") echo "selected"; ?>>
+        Syntax
+    </option>
+
+    <option value="Loopar" <?php if ($subject === "Loopar") echo "selected"; ?>>
+        Loopar
+    </option>
+
+    <option value="Debugging" <?php if ($subject === "Debugging") echo "selected"; ?>>
+        Debugging
+    </option>
+
+</select>
+            <legend class="contact-info__legend">
               Beskriv vad du mer skulle vilja veta:
-            </h3>
-            <label class="contact-form__label--hide" for="contact-info">
-              Fyll i textrutan:</label
-            >
+            </legend>
+            <label class="contact-form__label" for="contact-info"></label>
             <textarea
               rows="5"
               cols="50"
               class="contact-form__input"
               id="contact-info"
               name="info"
-            ></textarea>
-            <h3 class="contact-form__title">Hur vill du bli kontaktad?</h3>
+              ><?php echo htmlspecialchars($info, ENT_QUOTES, 'UTF-8'); ?></textarea>
+
+            <legend class="contact-info__legend">
+              Hur vill du bli kontaktad?
+            </legend>
 
             <input
               type="radio"
-              class="contact-form__radio"
               id="contact-method-email"
               name="contact-method"
               value="E-post"
+            <?php if (($contactMethod ?? "") === "E-post"): ?>
+                 checked
+             <?php endif; ?>
             />
             <label for="contact-method-email">E-post</label>
 
             <input
               type="radio"
-              class="contact-form__radio"
               id="contact-method-phone"
               name="contact-method"
               value="Telefon"
+              <?php if (($contactMethod ?? "") === "Telefon"): ?>
+                 checked
+            <?php endif; ?>
             />
             <label for="contact-method-phone">telefon</label>
-
-            <button
-              class="contact-form__submit"
-              type="submit"
-              data-js-action="submitted-form"
-              data-information-after-submit="Tack för visat intresse"
-            >
-              Skicka
-            </button>
           </fieldset>
-
+          <button
+            class="contact-form__submit"
+            type="submit"
+            data-js-action="submitted-form"
+            data-information-after-submit="Tack för visat intresse"
+          >
+            Skicka
+          </button>
           <p
             class="contact-form__answer"
             data-js-target="submit-answer"

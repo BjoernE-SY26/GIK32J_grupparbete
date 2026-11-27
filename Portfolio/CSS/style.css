@@ -82,6 +82,15 @@
 /* 
    KONTAKTFORMULÄR
 */
+.contact-form__error {
+  color: red;
+}
+
+.contact-form__error-summary {
+  border: 1px solid red;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
 
 .contact-form {
 }
