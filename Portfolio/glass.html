@@ -13,8 +13,15 @@
   </head>
   <body>
     <header class="header">
-      <a class="homepage-link" href="index.html">Tillbaka till startsidan</a>
+      <a class="header__homepage-link" href="index.html"
+        >Tillbaka till startsidan</a
+      >
       <h1 class="header__title">Glass!</h1>
+      <p>
+        Jag anser att det alltid är viktigt att sätta undan någon minut för att
+        ha roligt i vardagen, därav har jag skapat denna sida som komplement
+        till min portfölj!
+      </p>
     </header>
     <main>
       <section class="glass">
@@ -27,7 +34,7 @@
 
         <!-- js-knapp (action/data. Text ska tillkomma om/när man trycker på knappen)-->
         <button
-          class="glass__button"
+          class="glass__button glass__button--modify"
           type="button"
           data-js-action="show-favoritglass"
           data-favoritglass="Pistageglass"
@@ -42,9 +49,10 @@
           aria-live="polite"
         ></p>
 
-        <h2>Vilken är DIN favoritglass?</h2>
+        <!-- js-knapp2 (action/data. Text ska tillkomma om/när man trycker på knappen)-->
+        <h2 class="glass__intro">Vilken är DIN favoritglass?</h2>
         <button
-          class="din-glass__button"
+          class="glass__button glass__button--modify"
           type="button"
           data-js-action="show-din-favoritglass"
           data-din-favoritglass="Pistageglass"
@@ -54,7 +62,7 @@
 
         <!-- TARGET - den tillkomna texten från js tillkommer i en annars tom p-->
         <p
-          class="din-glass__answer"
+          class="glass__answer"
           data-js-target="din-favoritglass-answer"
           aria-live="polite"
         ></p>

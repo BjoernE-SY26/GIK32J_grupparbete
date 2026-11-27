@@ -36,7 +36,7 @@ if (showDinFavoritglassButton && dinFavoritglassAnswer) {
     dinFavoritglassAnswer.textContent =
       "Det är ju självklart att din favoritglass också är " +
       dinFavoritglass +
-      "! Det finns ingen annan som kan vara favoriten!";
+      "! Det finns ingen annan glass som kan vara favoriten!";
   });
 }
 

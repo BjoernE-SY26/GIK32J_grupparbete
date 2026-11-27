@@ -1,3 +1,10 @@
+*,
+*::before,
+*::after {
+}
+:root {
+}
+
 #skip-link {
   position: absolute;
   top: -100px;
@@ -6,4 +13,199 @@
 
 #skip-link:focus {
   top: 10px;
+}
+/* 
+   HEADER
+*/
+
+.header {
+}
+
+.header__homepage-link {
+}
+
+.header__title {
+}
+
+.header__intro {
+}
+
+/* 
+   NAVIGATION
+ */
+
+.nav {
+}
+
+.nav__list {
+}
+
+.nav__item {
+  margin: 1rem;
+}
+
+.nav__link {
+}
+
+/* 
+   OM MIG
+*/
+
+.about-me {
+}
+
+.about-me__title {
+}
+
+.about-me__text {
+}
+
+.about-me__figure {
+}
+
+.about-me__caption {
+}
+
+/* 
+   KONTAKT
+ */
+
+.contact {
+}
+
+.contact__title {
+}
+
+.contact__text {
+}
+
+/* 
+   KONTAKTFORMULÄR
+*/
+
+.contact-form {
+}
+
+.contact-form__fieldset {
+}
+
+.contact-form__legend {
+}
+
+.contact-form__label {
+}
+
+.contact-form__label--hide {
+}
+
+.contact-form__input {
+}
+
+.contact-form__title {
+}
+
+.contact-form__checkbox {
+}
+
+.contact-form__radio {
+}
+
+.contact-form__submit {
+}
+
+.contact-form__answer {
+}
+
+/* 
+   KOMPETENSER- html-sida – TABELL
+*/
+
+.table {
+}
+
+.table__table {
+}
+
+.table__title {
+}
+
+.table__head {
+}
+
+.table__row {
+}
+
+.table__header {
+}
+
+.table__body {
+}
+
+.table__content {
+}
+
+.table__list {
+}
+
+.table__item {
+}
+
+/* 
+   PROJEKT -html-sida
+*/
+
+.projectcard {
+}
+
+.projectcard__article {
+}
+
+.projectcard__title {
+}
+
+.projectcard__text {
+}
+
+.projectcard__link {
+}
+
+/* 
+   GLASS html-sida
+*/
+
+.glass {
+}
+
+.glass__intro {
+}
+
+.glass__list {
+}
+
+.glass__item {
+}
+
+.glass__button {
+}
+
+.glass__button--modify {
+}
+
+.glass__answer {
+}
+
+/* 
+   FOOTER
+*/
+
+.footer {
+}
+
+.footer__text {
+}
+
+.footer__mailto {
+}
+
+.footer__mailto-link {
 }
